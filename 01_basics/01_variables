@@ -1,0 +1,8 @@
+// 3 ways to declare variables
+
+const cnic = 352020 // const => can't change its value once assigned // TRY cnic = 34567 
+let name = 'maliha'
+var language = 'js'
+
+console.log(name) 
+console.table([cnic,name,language]) // to display many variables at a time
