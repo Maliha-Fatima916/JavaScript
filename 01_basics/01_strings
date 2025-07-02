@@ -1,0 +1,42 @@
+// typeof string: string
+// frequently used methods of strings 
+let msg = "Welcome!"
+
+//1
+console.log(msg.length)
+
+//2 
+console.log(msg.toUpperCase())
+
+//3
+console.log(msg.toLowerCase())
+
+//4
+console.log(msg.includes('j'))
+console.log(msg.includes('Welcome'))
+
+//5
+console.log(msg.indexOf('!'))
+console.log(msg.indexOf('co'))
+
+//6
+let st = '  Nice and Cool  '
+console.log(st.trim()) // trim whitespaces if presnt at start or end of string
+
+7
+let l = "I love JavaScript"
+console.log(l.replace('JavaScript','Python'))
+
+//8
+console.log(l.split(' '))
+
+//
+let story = "Once upon a time"
+console.log(story.slice(4)) // 4 is interprated as starting index: end is included
+console.log(story.slice(0,7)) // letters from 0 to 6 are shown, end is excluded
+console.log(story.slice(-7)) // treated last letter as -1 and go left upto -7 ( end included)
+
+//console.log(story.slice(-1,5)) // result is empty string as it invalid (slice go from ri8 to lft if start is negative )
+//🔑 Rule of Thumb:
+// slice(start, end) works only left to right.
+// If start > end, result is empty string

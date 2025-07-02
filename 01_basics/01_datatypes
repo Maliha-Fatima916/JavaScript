@@ -1,0 +1,21 @@
+// Two types of datatypes in javascript on basis of storing and accessing them in memory
+// Primitive , Non-primitive
+
+// Primitive: Number (int/float), String, Null (intentionaly left blank), Undefined (intialized variable)
+// Boolean (true or false), BigInt, Symbol ( make variable unique identifier)
+
+//Non-primitive: Object (like dictionary in python), Array, Function
+
+let x = 9               // not strict declaring : dtype of x can be change later
+let y = new Number(14)  // strict declaring : that datatype of y can't change & will always be Number only
+
+// console.log(x)
+// console.log(y)
+
+let s = 'node.js' // or let s = new String('node.js')
+
+let n = null
+console.log(typeof n)
+
+let b = true // let b = 1 // b = Boolean(1)
+console.log(b)
