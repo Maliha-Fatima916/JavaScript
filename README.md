@@ -1,2 +1,2 @@
 # JavaScript
-A code repository
+A code repository 

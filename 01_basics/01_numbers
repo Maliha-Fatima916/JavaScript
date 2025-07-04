@@ -1,0 +1,117 @@
+// typeof: Number
+// Number includes integer & floating-point as well (same dtype for any number)
+
+const balance = 400
+const b = new Number(200) // can't declare it with let keyword 
+// console.log(balance)
+//console.log(b)
+
+// frequently used methods of Number
+
+//1.
+let c = b.toString() // sometimes changing a Number to String give it more power (all methods of strings)
+//console.log(typeof c)
+
+//2.
+let f = 42.465
+
+//Rounds the number to a fixed number of decimal places .
+//console.log(f.toFixed(2)) // 42.47
+
+//console.log(f.toFixed(0)) // 42 
+
+let f2 = 42.6 
+//console.log(f2.toFixed(0)) // 43
+
+let n = 143
+//console.log(n.toFixed(-1)) // can't work with -ve nmbers
+
+//console.log(n.toFixed(2)) // 143.00
+
+let checkType = n.toFixed(2)
+console.log(n)
+console.log(typeof n)
+
+
+//3.
+// It's very useful when you want to control the total
+//  number of digits in a number — not just after the decimal point like toFixed()
+
+let p = 23.8966
+// console.log(p.toPrecision(4)) // it will keep total 4 digits and round the last one if true
+
+//console.log(p.toPrecision(2)) // 24
+
+// console.log(p.toPrecision(1)) // 2e+1 : if we want precision at too big or too small number 
+//                           //  it give exponential result
+
+// toPrecision returns a string
+
+//4.
+// It converts a number into a string,
+// formatted according to local language and culture settings (called a locale)
+// Add commas , currency 
+
+let priceOfBag = 2400.99
+// console.log(priceOfBag.toLocaleString()) //1,245 : by default put commas a/c English format
+
+// console.log(priceOfBag.toLocaleString('en-PK',{style:'currency',currency:'PKR'}))
+// Rs 2400.99
+
+//5.
+//check var is a number or not isNaN():is not a number ?
+let s = '123.67'
+//console.log(isNaN(s)) // false: as '123' is a string
+
+//6. 
+// Convert string to number: useful for receiving a num from user I/P as string 
+
+//console.log(parseInt(s))    // parseInt(string) => integer
+
+//console.log(parseFloat(s))  // parseFloat(string) => float
+
+
+//**********************************************************************************************
+//                 JavaScript Library: Math
+
+console.log(Math) // Object [Math] {} : means it is an Object with many properties ({})
+
+//1.
+let num1 = -4
+//console.log(Math.abs(num1))
+
+
+//2.
+let num2 = 45.1
+//console.log(Math.ceil(num2)) // 46 : ceil always go up 
+
+//console.log(Math.floor(num2)) // 45 : floor alwayts go down to the nearest int
+
+//3.
+// console.log(Math.max((2,4,6,8)))
+// console.log(Math.min((2,4,6,8)))
+
+
+//4.
+// console.log(Math.round(9.4))  // 9
+// console.log(Math.round(9.5))  // 10
+// console.log(Math.round(-1.4)) // -1
+// console.log(Math.round(-1.5)) // -1
+// console.log(Math.round(-1.6)) // -2
+
+//5.
+// only drop the decimal part, do not roundoff
+//console.log(Math.trunc(5.999)) // 5
+
+//6.
+// console.log(Math.random()) // gives a random number between 0 (inclusive) and 1 (exclusive).
+
+console.log(Math.floor(Math.random()*10)) // to generate a num bw  0 & 9 (mul by 10 shifts the decimal to right)
+
+console.log(Math.floor(Math.random()*10 + 1)) // bw 1 & 10 : +1 is to avoid the case of 0.01
+
+
+// to generate number bw any range, here is formula for it
+let min = 1
+let max = 6
+console.log(Math.floor((Math.random()*(max-min+1))+min))
