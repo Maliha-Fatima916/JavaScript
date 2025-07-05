@@ -1,0 +1,64 @@
+// typeof: Object
+
+let dt = new Date()
+// console.log(dt) //2025-07-04T10:42:58.267Z
+
+// there are some methods that make date's output readable 
+
+//1. 
+console.log(dt.toString()) // Fri Jul 04 2025 10:44:49 GMT+0000
+
+//2. 
+// console.log(dt.toDateString()) // Fri Jul 04 2025
+
+//3. 
+console.log(dt.toLocaleString()) // 7/4/2025, 10:47:45 AM
+
+// *** In JavaScript, Months start from (0=Jan , 11=Dec)
+
+let myOwnDate = new Date(2025,6,29) // Date(year, mnth, day)
+console.log(myOwnDate) // 2025-07-29T00:00:00.000Z
+
+console.log(myOwnDate.toDateString()) //Tue Jul 29 2025
+
+// 4. Formatting Date
+// in case of formatting 'month starts from 1 upto 12'
+
+let frmt_dt = new Date("7-29-2025")
+console.log(frmt_dt.toLocaleString()) // 7/29/2025, 12:00:00 AM // same m/d/y as given in format
+
+console.log(frmt_dt.toDateString()) // Tue Jul 29 2025: default format: M/D/Y
+
+//5. Current Time using Date Object
+// as we know Date is an obj so we can access its methids using dot
+
+console.log(Date.now())  //1751628157357: Deafult time is in miliseconds counted since 1970 to now
+
+//6.
+// Timestampes : useful to compare times e.g. which guy has given the answer before the other
+let timeStamp = new Date().getTime()
+console.log(timeStamp) // 1751655431296
+console.log(typeof timeStamp) // *** Number ***
+
+//Conversion milisecond => seconds : divide milisec by 1000
+console.log(Date.now()/1000)  // => gives ans as floatinf point so use math.floor
+
+// other methods 
+let newDt = new Date()
+console.log(newDt.getDay())
+console.log(newDt.getMonth()+1)
+console.log(newDt.getFullYear())
+console.log(newDt.getHours())
+
+let day = new Date().getDay()
+let datenow = Date.now()
+let date_now = datenow.toDateString()
+
+console.log("Its ${day} ${date_now} today ")
+
+
+
+
+
+
+
