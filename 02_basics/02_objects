@@ -1,0 +1,52 @@
+
+// Two ways to declare objects 
+// 1. Object literals : using {} in key value pair form
+//2. Singleton : using constructor ( yeh apni trha ka aik hi object hai) e.g using Object.create
+
+
+// creating object : Object can have 2 things : data/properties , function/methods 
+const user = {
+    0 : 'person' ,
+    name :'sara',
+    age : 20,
+    glasses : true,
+    //'240' : 'what' // gives error
+    // 240: 'what' // gives error because here index no. is 4 not 240
+}
+
+// Access/Update data/properties of Obj using [''] (more reliable) or dot 
+console.log(user.name)
+console.log(user['name'])
+
+user['age'] = 34
+user.name =  'amna'
+
+console.log(user.name)
+
+// ### using 'symbol' datatype in object ###
+
+let mysym = Symbol('CNIC')
+let employee = {
+    name : "strange",
+    [mysym] : 35000011,    // only way to use 'symbols' as 'key' is in square brackets
+    age : 30
+}
+console.log(employee[mysym]) // only way to access symbols of an object: [] with no quote marks inside
+console.log(typeof employee[mysym]) //number: not symbol bcz dtype will be of the value stored in symbl
+
+// Restricting someone to change data of your object:Use freeze
+Object.freeze(employee)
+
+// Declaring functions/methods inside Objects
+
+user['greetings'] = function(){ console.log('Hi !!') }
+
+user.greetings2 = function() {
+    console.log(`Hi !! ${this.name }`)  // inside the object using any data of obj 's itself we use 'this'
+    //                                  //  to refer to that data
+     
+}
+
+console.log(user.greetings())
+console.log(user.greetings2())
+
