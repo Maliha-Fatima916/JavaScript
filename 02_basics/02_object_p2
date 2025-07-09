@@ -1,0 +1,141 @@
+// declaring objects using constructor & singleton object
+
+// remember !!
+// const instaUser = new Object() // It is a singleton object
+// const ytubeUser = {} // the obj that is declaered using {} is not a singleton object 
+
+// ytubeUser.id = '123'
+// ytubeUser.name = 'hannah'
+
+// console.log(ytubeUser)
+
+// Object within object
+const student = {
+    sID : '001',
+    name : 'Sara',
+    subjects : {Maths: 'By Udemy',English:'By Coursera'}
+}
+
+// Object within object within object
+// const employee = {
+//     sID : '001',
+//     fullname : {first_name: 'Hulk',last_name:'Green',father_name:{first_name:'stewart',last_name:'Green'}},
+//     subjects : {Maths: 'By Udemy',English:'By Coursera'}
+
+// }
+// console.log(employee.fullname.father_name) // Accessing the nested objects
+
+
+
+// Merging(makin 2 objects look like 1 object) 2 objects 
+
+ const obj1 = {1: 'name', 2:'CNIC'}
+// const obj2 = {1: 'roll_no', 2:'Status'} 
+// // if keys of both objects are same , then during merging values
+// // of obj1 will be over written by obj2 values
+
+// const obj3 = {obj1,obj2} // This method results in nested objects , not merging properly
+// //console.log(obj3)
+
+// // Use Object.assign(target,source1,source2...) wwhere target = {} , source = object
+const obj4 = {3: 'name', 4:'CNIC'}
+
+// const obj5= Object.assign({},obj1,obj2)
+// const obj6= Object.assign({},obj3,obj4)
+
+// console.log(obj5)
+// console.log(obj6)
+
+// Using "Spread" as we do in arrays 
+const obj7 = {...obj1, ...obj4}
+// console.log(obj7)
+
+// Array of Objects
+const users = [{id:100, name:'sara'},{id:121, name: 'joe'},{id:132, name:'nobi'}]
+// console.log(users[1].name) // joe
+
+
+// getting all keys of an Object using Object.keys(obj1) => return an array of keys
+//console.log(Object.keys(users[0]))
+//console.log(Object.values(users[0]))
+
+// checking whether the object has a certain property/data/key
+console.log(users[0].hasOwnProperty('id')) //true 
+
+//*************************  Destructuring Objects  **************************
+//Destructuring means: breaking an object into its pieces
+// (its properties), and assigning them to variables
+
+// Destructring is done to make accessing and using the properties of objects easily
+// instead of using objectName.key (user.name) we can simpy use key (name)
+
+// syntax: const {key1, key2} = object's name
+
+const cake = {
+    flavour : "Vanilla",
+    price : 2200
+}
+
+// console.log(cake.flavour)   // traditional way 
+
+// const {flavour , price} = cake 
+// console.log(flavour) // using destructuring
+
+// we can assign new 1) names of keys , 2) also set default values for keys 
+// 1)
+
+ const {price : keemat} = cake
+// console.log(keemat)
+
+// 2)
+
+const omelette = {
+    eggCount : 2,
+    tomato : true,
+    onion : true,
+    chili : false
+}
+
+const {eggCount : eggs} = omelette
+console.log(Ginger = true )
+
+console.log(omelette)
+
+// ******************** JSON *****************
+
+// JSON: is just a format (a syntax) for 
+//turning data into a plain string. That’s called serialization.
+// And yes, the reason we do this is to store or send the data (like through an API or into a file)
+
+// It is inspired by JS object that's why called JSON (JavaScript Object Notation)."
+// It is like JS object whose all keys are strings and values can be string/number/
+// null/array/objects/boolean. 
+
+// Dtypes not allowed in JSON : Symbol,Undefined,NaN other than these: functions, comments,infinity
+
+// Data -> JSON = SERIALIZING(converting to string) using JSON.stringify(Obj/any Dtype allowed in JSON)
+// Data <- JSON = Parsing (from JSON to itsoriginal dtype) using JSON.parse()
+
+// inJSON only use double quote 
+
+// {
+//     "color" : "black",
+//     "price" : 2100,
+//     "panes" : "glass"
+
+// }  // JSON: so the data inside can be stored and send easily
+
+const order = {
+    id : 123,
+    price : 2300
+}
+
+const serialized = JSON.stringify(order)
+
+//console.log(serialized)
+
+const deSer = JSON.parse(serialized)
+
+console.log(typeof deSer)
+
+

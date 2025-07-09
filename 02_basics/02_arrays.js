@@ -55,13 +55,13 @@
 
 let basket = ['Ball','Cube','Pen','Thread']
 
-// console.log(basket.slice(0,2))
+console.log(basket.slice(0,2))
 
-// console.log(basket)
+console.log(basket)
 
-// console.log(basket.slice(2))
+console.log(basket.slice(2))
 
-// console.log(basket.slice(-2)) // last two
+console.log(basket.slice(-2)) // last two
 
 // console.log(basket.slice(-1,-2)) // outputs []: empty arr bcz slice always go from left to right
 //                               // if strt & end are given, here start = 3 , end = 2 (it can'y move)
@@ -86,12 +86,6 @@ let wet_ingrediennts = ['Butter','Egg','Vanila Essence']
 //let cake = dry_ingredients.concat(wet_ingrediennts) // concat merges two arrays as single array 
 
 //2. Want to merge more than 2 arrays: Use Spread method 
-//let toping = ['Whipping Cream','Cherry']
-
-//let cake = [...dry_ingredients, ...wet_ingrediennts, ...toping]
-//console.log(cake)
-
-// turning arr within arr or even arr within arr within arr into one array
 
 let toping = [['Whipping Cream','Chocoalate'],['Cherry','choco chips']]
 let topings =  toping.flat()
