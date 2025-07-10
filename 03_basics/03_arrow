@@ -1,0 +1,42 @@
+// 
+console.log(this) 
+// In Node.js, it will refer to {} (an empty global object), not window.
+// In a browser, 'this' will point to the window object (the global object)
+
+// ..............................................................
+
+// Inside an obj 'this' refers to properties of object itself
+const user = {
+  name: "Ali",
+  greet() {
+    console.log("Hi " + this.name);
+  }
+};
+// user.greet(); // Hi Ali
+// ..............................................................
+
+// 'this' inside a 3 differently declared function 
+
+// simple function 
+// function one(){
+    const pet = 'cat'
+    //console.log(this) // this shows many things 
+    // console.log(this.pet) //gives undefined
+// }
+// //one() 
+
+// 'this' inside function expression 
+let cake = function() {
+    say = 'hi'
+    console.log(this) // => many things but gave the 'say: hi'  also
+    console.log(this.price) // => gives hi
+}
+// cake()
+
+// 'this' inside arrow function
+let arro1 = () => {
+    paint = 'blue'
+    console.log(this) // => gives {}
+    console.log(this.paint) // => gives {}
+}
+arro1()

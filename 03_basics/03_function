@@ -1,0 +1,100 @@
+// syntax: funtion function_name() {}
+
+// Ways to declare functions 
+
+//1. for this type of func declaration , we can call the function even before its decalaration
+// greet() 
+function greet(){
+    console.log('Hello')
+}
+
+// greet : it is reference of function : where the above funtion resides/live
+greet() // it is execution of function name of func + ()
+
+//2 . called Function expression , can't call it before declaration
+// func2() => throws error 
+let func2 = function(){
+    console.log('I am function expression ')
+}
+func2()
+//..............................................................
+
+//with parameters
+function greet_name(name){
+
+    console.log('Hello '+ name)
+}
+greet_name('Aina')
+//..............................................................
+
+
+// function with return value
+function add(a,b){
+    return a+b
+}
+// console.log(add(2,3))
+//..............................................................
+
+
+// Using if() to check if value of para is defined or undefined
+function user(username){
+    if(username === undefined){
+        console.log('Please enter your username')
+        return 
+    }
+    return `${username} Here you go !!`
+}
+console.log(user()) // if no argument is passed then function will return undefined not null )
+
+//..............................................................
+
+
+// setting default value of parameters
+// but here as he have given the default vlaue of parameter 
+// then it would be use for username and never be undefined 
+function user(username='Google'){
+    return `${username} Here you go !!`
+}
+//..................................................................
+
+// passing multiple arguments whose count is unknown 'user kitny pass kry ga, we don't know'
+//in this case use rest operator = ... , all of these passed arguments will be return by func in an array
+
+function shopingCart(...articles){
+    return articles 
+}
+ 
+//console.log(shopingCart('f#13','q#14','d#230','we34'))
+
+//syntax2
+function books(val1,val2,...vals){
+    return val1, val2, vals
+}
+// 1st & 2nd parameter provided by user get stored in val1,val2 respectively
+// and para from 3rd ownward will be stored together in an array
+
+//console.log(books('Ideology','chem','phy','bio'))
+
+//return a, b, c	Only returns c (the last one)
+//return [a, b, c]  To return all values we can return them in an array
+
+//..........................................................................
+
+// passing and using object in a function
+
+const emp = {
+    name : "Ron",
+    age : 23,
+    salary : '$1200'
+}
+
+function objectHandling(obj){
+    console.log(`Hello ${obj.name}, your salary is ${obj.salary}`)
+
+}
+objectHandling(emp)
+
+// Ways To declare function 
+
+
+

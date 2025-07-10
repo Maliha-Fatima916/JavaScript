@@ -1,0 +1,48 @@
+// when curly braces {} used with function or if-else , we consider scope of variables
+// variables inside that curly braces have LOCAL SCOPE(func & Block): means they can only be used with that brackets
+// outside the {}, variables have GLOBAL SCOPE: can be use anywhere
+// There are 3 main scopes in JS:
+// > Global scope (outside any block or function)
+// > Function scope (inside a function)
+// >Block scope (inside { }, like in if/for/while)
+
+
+// var keyword : Do not use it in your code 
+// because var ignores block scope ! , respects function scope
+
+if (true){
+    let a = 3
+    const b = 5
+    var c = 7
+
+}
+// console.log(a) // a is not defined : As it was declared inside the {}, can't access globaly 
+// console.log(b) // b is not defined : only exists inside the above block
+// console.log(c) // 7 : var ignores the Block scope 
+
+// Remember global scope is different for Node and Windows
+
+//.........................................................
+// Nested scope = {} within {} 
+
+// Function within function: Outer func = Parent , Inner func = Child
+// Child can use Parent's property(variables) , but parent can't take from Child 
+
+function outer(){
+    o = 'Sara'
+
+    function inner(){
+        i = 'David'
+        console.log(o+i)
+    }
+    // console.log(i) // give error bcz Parent can't borrow something from child
+    inner() // calling inner 
+}
+outer()
+
+
+
+
+
+
+
