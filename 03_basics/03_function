@@ -94,7 +94,16 @@ function objectHandling(obj){
 }
 objectHandling(emp)
 
-// Ways To declare function 
+// Arrow function
 
+// 1. EXplicitly defines : in which value is returned using 'return keyword'
+const five = () => {
+    return 2+3
+}
+console.log(five())
+
+// implicitly defined: return keyword is not used to return value of function
+
+(num1,num2) => (num1+num2) // (parameter) =>(result that should be return)
 
 

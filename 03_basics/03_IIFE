@@ -1,0 +1,38 @@
+//immediate invoke function expression (IIFE) , syntax ( function_definition{} )() last brackets are for func's execution
+// runs immediately (and only once) after it's defined, without being called separately
+
+// Why use IIFE: 1) when we want our func run immediately , 2) To avoid polluting the global scope
+
+//Polluting the global scope means:
+//You are putting too many variables or functions into the global space, which can cause conflicts or bugs.
+
+
+(function () {
+  let privateValue = "I stay inside";
+  console.log(privateValue);
+})(); // Remember to put semicolon after IIFE
+
+//  The variable is only inside the function. Global scope is clean and safe
+// console.log(privateValue); // Error
+//..........................................................
+
+// Using ARROW func to declare IIFE
+( () => {
+  console.log('Connected to Database')
+} ) () ;
+
+//..........................................................
+
+// Passing parameter in Arrow Fun IIFE
+// syntax: ( (parameter) => {} ( pass argument here) );
+
+// Simple IFFE => if function in IIFE do not have any name
+( (name) => {
+  console.log(`hello ${name}`)
+} ) ('Maliha'); 
+
+// Named IFFE , name of function = cookies
+( function cookies() {
+  console.log('Favourite cookies are here')
+} ) ();
+
