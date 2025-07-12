@@ -1,0 +1,27 @@
+//if , else, else if
+// <, >, >=, <=, ==, ===(this check value + dtype of var as well)
+
+let x =3
+let y =4
+if (x<y){
+    console.log('less than')
+} else if (x>y){
+    console.log('greater')
+}else{
+    console.log('equal')
+}
+
+//switch statement
+// the switch statement in JavaScript only checks for strict equality (===).
+
+let fruit = 'apple'
+switch(fruit){
+    case 'apple':
+        console.log('its an apple');
+        break;
+
+    case 'banana':
+        console.log('its a banana');
+        break;
+}
+

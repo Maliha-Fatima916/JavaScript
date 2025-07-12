@@ -1,0 +1,26 @@
+// for loop
+for (let i=0; i<5; i++){
+    console.log(i)
+}
+
+// nested for loop
+for (let i=0; i<2; i++){
+    console.log('outer')
+    for (let j=0; j<2; j++){
+        console.log('inner')
+    }
+}
+
+//while loop
+let k=4
+while (k>0){
+    console.log(k)
+    k-=1
+}
+
+// do-while
+i=2
+do{
+    console.log('HI')
+    i--
+} while (i>0)
