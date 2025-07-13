@@ -1,0 +1,47 @@
+// In filter(), map(), reduce(), forEach() => Call Back Function is used , Call Back is a function with no name 
+
+// Filter()
+//The filter() method is used to create a new array that only contains elements that pass a test (i.e., return true in a condition)
+// Works on	Arrays only , Returns A new array conatining filtered elements, Original array => Not changed
+
+const numb = [1,2,3,4,5,6,7,8,9]
+console.log( numb.filter( val => val > 5 ) ) // parameter => what to be return  : val => val > 5 
+
+
+// Using filter on array of objects ( real world case .. data from database come this way )
+
+const users = [
+  { name: "Ali", age: 22 },
+  { name: "Sara", age: 17 },
+  { name: "Amna", age: 25 },
+  { name: "Aaina", age: 15 }
+];
+
+const adults = users.filter( (eachUser) => eachUser.age >= 20)
+console.log(adults); // [ { name: 'Ali', age: 22 }, { name: 'Amna', age: 25 } ]
+
+
+// filter users whose name starts with A
+// within function scope means {} , return keyword is must to use, to return the value , otherwise it returns empty array / undefined
+const user_A = users.filter( function (eachUser) { return eachUser.name.startsWith('A') } )
+console.log(user_A)
+
+// filter users whose name starts with A and also are adults 
+const both = users.filter( function (eachUser) { return eachUser.name.startsWith('A') && eachUser.age >= 20} )
+
+//............................................  map()  ............................................
+//The .map() method creates a new array by applying a function to every item in the original array
+// Take this array → transform each value → return a new array of results
+//  Like filter() it returns a new array having mapped values
+
+const nums = [1,2,3,4,5,6,7,8,9]
+
+let add_ten = nums.map( (n) => { n+10 } ) //
+
+//console.log(add_ten) // undefined : bcz in above CB function we have used function scope {} but do not use return keyword
+
+add_ten = nums.map( (n) => { return n+10 } ) // as above we have used the keyword 'let' so we can update the value of add_ten
+console.log(add_ten) 
+
+// ........................ Method Chaining ...................................
+

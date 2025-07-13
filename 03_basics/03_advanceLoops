@@ -1,0 +1,92 @@
+// 'for of' loop
+// The for...of loop is used to loop through the values of an iterable( arr,object,set,string)
+// it refers to element prensent at index i , not the indexes. (like in python 'for i in list')
+
+// syntax: for (let i of array){
+//     console.log('i')
+// }
+
+const s = 'Noon'
+for (let i of s){
+    console.log(i)
+}
+
+const obj = {name:'Sara',age:'22'}
+
+// for (let i of obj){    gives error:  for..of is not applicable on plain object
+//     console.log(i)     we can loop either on keys or values of a object using for..of
+// }
+
+// for (let i of Object.values(obj)){
+//     console.log(i)
+// }
+
+//A DType of JS: Maps => map is like object but only carries unique values in it + order of keys matters
+
+//using .set() we can add our key-value pairs in map
+let m = new Map()
+m.set('key1','value1')
+m.set('key2','value2')
+//console.log(m)
+
+// looping over m......applying for-in loop on maps gives nothing , maps are not iterable
+//1 if we apply loop on directly on whole map, it will give array for each key,value pair
+
+// for (i of m){
+//     console.log(i)
+// }
+
+//2 syntax for key and its value seperately is [i,j] i will refer to key , j to value of ith key
+for ([i,j] of m){
+    console.log(i, '00' , j)
+}
+
+// for-in : this loop loops over indexes/keys not values
+
+let f = ['Apple','Banana']
+for (const i in f){
+    console.log(i) // prints 0,1 (indexes), not values/elemnts (apple, banana)
+    console.log(f[i]) // to print elements
+}
+
+// for - each loop: its a loop for Arrays only 
+// as its parameter pass the call back function:(func jis ka namm nhi hota or iss k parameter by default jis arry pr lgaya uss k elements hoty) 
+//e.g. simple func: function name (parameters){ body/what it will do } , CBF(don't have name) => function (element of arr){what to do on elements of arr }
+// syntax : arrays_name.forEach( function () {} )
+//You can’t use break, continue, or return to stop forEach() — it will always run for all items.
+const lang = ['JS','PYTHON','CPP']
+lang.forEach( function (ele) {
+    console.log(ele)
+} )
+
+// for-each using arrow function
+lang.forEach( function (val){
+    console.log(val)
+} )
+
+// passing already defined function in for-each
+
+const print = function (item) {
+    console.log(item)
+}
+ 
+const color = ['Red','Green']
+
+// print color using forEach: pass name of function (refernece) only not brackets  like name()
+color.forEach(print)
+
+// Other parameters of forEach : array.forEach(item,index(of each item),array())
+//........................................................
+
+// What forEach loop returns : nothing => Undefined
+//........................................................
+
+
+
+
+
+
+
+
+
+
