@@ -45,3 +45,9 @@ console.log(add_ten)
 
 // ........................ Method Chaining ...................................
 
+
+
+// DOM stands for Document Object Model
+// It is a virtual tree structure that represents your HTML page — and JavaScript uses it to read,
+// change, or control anything on the page.
+// simply , The DOM is how JavaScript sees and controls your webpage
